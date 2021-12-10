@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<plugin version="php">
+<id>yuranapp</id>
+<name>百度智能小程序</name>
+<url>https://opssh.cn/fenxiang/35.html</url>
+<note>接入 swan-sitemap 动态库，一站式互动组件，小程序一键关注，文章语音朗读，小程序云加速缓存，swan.setPageInfo 动态库，云端一体组件</note>
+<description></description>
+<path>show.php</path>
+<include>include.php</include>
+<level>1</level>
+<author>
+  <name>彧繎叔叔</name>
+  <email>admin@opssh.cn</email>
+  <url>https://opssh.cn/</url>
+</author>
+<source>
+  <name></name>
+  <email></email>
+  <url></url>
+</source>
+<adapted>172995</adapted>
+<version>1.0.0</version>
+<pubdate>2021-11-01</pubdate>
+<modified>2021-12-10</modified>
+<price>0</price>
+<phpver>5.6</phpver>
+<advanced>
+  <dependency></dependency>
+  <rewritefunctions></rewritefunctions>
+  <existsfunctions></existsfunctions>
+  <conflict></conflict>
+</advanced>
+<sidebars>
+  <sidebar1></sidebar1>
+  <sidebar2></sidebar2>
+  <sidebar3></sidebar3>
+  <sidebar4></sidebar4>
+  <sidebar5></sidebar5>
+  <sidebar6></sidebar6>
+  <sidebar7></sidebar7>
+  <sidebar8></sidebar8>
+  <sidebar9></sidebar9>
+</sidebars>
+</plugin>
