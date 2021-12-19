@@ -2,34 +2,34 @@
 include_once __DIR__.'/database/index.php';
 #注册插件
 
-RegisterPlugin("yuranapp","ActivePlugin_yuranapp");
+RegisterPlugin("yuran_zixun","ActivePlugin_yuran_zixun");
 
-function ActivePlugin_yuranapp() {
-    Add_Filter_Plugin('Filter_Plugin_PostArticle_Core', 'yuranapp_PostArticle_Core');
-    Add_Filter_Plugin('Filter_Plugin_API_Get_Object_Array', 'yuranapp_API_Get_Object_Array');
-    Add_Filter_Plugin('Filter_Plugin_Edit_Response3','yuranapp_Edit_Response3');
-    Add_Filter_Plugin('Filter_Plugin_PostArticle_Succeed','yuranapp_PostArticle_Succeed');
-    Add_Filter_Plugin('Filter_Plugin_API_Extend_Mods', 'yuranapp_API');
-    Add_Filter_Plugin('Filter_Plugin_Admin_TopMenu', 'yuranapp_Admin_SiteInfo_SubMenu');
+function ActivePlugin_yuran_zixun() {
+    Add_Filter_Plugin('Filter_Plugin_PostArticle_Core', 'yuran_zixun_PostArticle_Core');
+    Add_Filter_Plugin('Filter_Plugin_API_Get_Object_Array', 'yuran_zixun_API_Get_Object_Array');
+    Add_Filter_Plugin('Filter_Plugin_Edit_Response3','yuran_zixun_Edit_Response3');
+    Add_Filter_Plugin('Filter_Plugin_PostArticle_Succeed','yuran_zixun_PostArticle_Succeed');
+    Add_Filter_Plugin('Filter_Plugin_API_Extend_Mods', 'yuran_zixun_API');
+    Add_Filter_Plugin('Filter_Plugin_Admin_TopMenu', 'yuran_zixun_Admin_SiteInfo_SubMenu');
 }
 
-function InstallPlugin_yuranapp() {
+function InstallPlugin_yuran_zixun() {
     baiduapp_CreateTable();
 }
 
-function UninstallPlugin_yuranapp() {}
+function UninstallPlugin_yuran_zixun() {}
 
-function yuranapp_API() {
+function yuran_zixun_API() {
 	return array('yuran' => __DIR__ . '/myapi.php');
 }
 
-function yuranapp_Admin_SiteInfo_SubMenu(&$m)
+function yuran_zixun_Admin_SiteInfo_SubMenu(&$m)
 {
   global $zbp;
-  $m[] = MakeTopMenu("root", '百度小程序设置', $zbp->host . "zb_users/plugin/yuranapp/show.php", "", "topmenu_metro",'icon-zblog-appcenter');
+  $m[] = MakeTopMenu("root", '百度小程序设置', $zbp->host . "zb_users/plugin/yuran_zixun/show.php", "", "topmenu_metro",'icon-zblog-appcenter');
 }
 
-function yuranapp_SubMenu($id){
+function yuran_zixun_SubMenu($id){
 	$arySubMenu = array(
 		0 => array('插件说明', 'show', 'left', false),
         1 => array('小程序配置', 'set', 'left', false),
@@ -43,25 +43,25 @@ function yuranapp_SubMenu($id){
 	}
 }
 
-function yuranapp_PostArticle_Succeed($article){
+function yuran_zixun_PostArticle_Succeed($article){
     global $zbp;
     if($article->Status)  return ;
     if((int) $article->Metas->search1==1){
-        yuranapp_baiduapp_Post($article->ID,1);
+        yuran_zixun_baiduapp_Post($article->ID,1);
     }
     if((int) $article->Metas->search0==1){
-        yuranapp_baiduapp_Post($article->ID,0);
+        yuran_zixun_baiduapp_Post($article->ID,0);
     }
     if((int) $article->Metas->search2==1){
-        yuranapp_baiduapp_Post($article->ID,2);
+        yuran_zixun_baiduapp_Post($article->ID,2);
     }
 }
 
 
-function yuranapp_baiduapp_spost($id,$title,$intro){
+function yuran_zixun_baiduapp_spost($id,$title,$intro){
     global $zbp;
-    $client_id=$zbp->Config('yuranapp')->appkey;
-    $client_secret=$zbp->Config('yuranapp')->appsecret;
+    $client_id=$zbp->Config('yuran_zixun')->appkey;
+    $client_secret=$zbp->Config('yuran_zixun')->appsecret;
     $url="https://openapi.baidu.com/oauth/2.0/token?grant_type=client_credentials&client_id=".$client_id."&client_secret=".$client_secret."&scope=smartapp_snsapi_base";
     $ajax = Network::Create();
     $ajax->open('GET', $url);
@@ -97,10 +97,10 @@ function yuranapp_baiduapp_spost($id,$title,$intro){
 }
 
 
-function yuranapp_baiduapp_Post($id,$type){
+function yuran_zixun_baiduapp_Post($id,$type){
     global $zbp;
-    $client_id=$zbp->Config('yuranapp')->appkey;
-    $client_secret=$zbp->Config('yuranapp')->appsecret;
+    $client_id=$zbp->Config('yuran_zixun')->appkey;
+    $client_secret=$zbp->Config('yuran_zixun')->appsecret;
     $url="https://openapi.baidu.com/oauth/2.0/token?grant_type=client_credentials&client_id=".$client_id."&client_secret=".$client_secret."&scope=smartapp_snsapi_base";
     $ajax = Network::Create();
     $ajax->open('GET', $url);
@@ -137,7 +137,7 @@ function yuranapp_baiduapp_Post($id,$type){
     }
 }
 
-function yuranapp_Edit_Response3(){
+function yuran_zixun_Edit_Response3(){
     global $zbp,$article;
     echo '<div id="original" class="editmod">
     <label for="edtoriginal" class="editinputname">小程序天级收录</label>
@@ -147,7 +147,7 @@ function yuranapp_Edit_Response3(){
     <label for="edtoriginal" class="editinputname">小程序搜索提交</label>
     <input id="edtoriginal" name="meta_search2" style="" type="text" value="0" class="checkbox"/>
     </div>';
-    $videoon=(int)$zbp->Config('yuranapp')->videoon;
+    $videoon=(int)$zbp->Config('yuran_zixun')->videoon;
     if($videoon==1){
     echo '<div id="original" class="editmod">
     <label for="edtoriginal" class="editinputname">开启视频展示</label>
@@ -160,9 +160,9 @@ function yuranapp_Edit_Response3(){
     </div>';
 }
 
-function yuranapp_PostArticle_Core(&$article) {
+function yuran_zixun_PostArticle_Core(&$article) {
     global $zbp;
-    $on=(int)$zbp->Config('yuranapp')->newintro;
+    $on=(int)$zbp->Config('yuran_zixun')->newintro;
     if($on==0){
         $intro=preg_replace('/[\r\n\s]+/', '', trim((TransferHTML($article->Content,'[nohtml]'))));
         $intro=str_replace("&nbsp;","",$intro);
@@ -172,7 +172,7 @@ function yuranapp_PostArticle_Core(&$article) {
     }
 }
 
-function yuranapp_API_Get_Object_Array(&$object, &$array) {
+function yuran_zixun_API_Get_Object_Array(&$object, &$array) {
     global $zbp,$mod,$act;
     switch (get_class($object)) {
         case 'Post':
@@ -180,7 +180,7 @@ function yuranapp_API_Get_Object_Array(&$object, &$array) {
             $array['Thumb'] = GetImagesFromHtml($object->Content);
             $array['Thumb'] = Thumb::Thumbs($array['Thumb'], 350, 240,3);
             $array['Tagn'] = explode(',', $object->TagsName);
-            $on=(int)$zbp->Config('yuranapp')->oldintro;
+            $on=(int)$zbp->Config('yuran_zixun')->oldintro;
             $array['TagsNames']=$object->TagsName;
             if($object->TagsCount==0){
                 $array['TagsNames']=$array['CateName'];
@@ -213,7 +213,7 @@ function yuranapp_API_Get_Object_Array(&$object, &$array) {
     }
 }
 
-function yuranapp_JSON_SwiperToJson($item)
+function yuran_zixun_JSON_SwiperToJson($item)
 {
     $data = json_decode($item->__toString());
     unset($data->Meta);

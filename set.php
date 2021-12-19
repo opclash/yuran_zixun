@@ -4,15 +4,15 @@ require '../../../zb_system/function/c_system_admin.php';
 $zbp->Load();
 $action='root';
 if (!$zbp->CheckRights($action)) {$zbp->ShowError(6);die();}
-if (!$zbp->CheckPlugin('yuranapp')) {$zbp->ShowError(48);die();}
+if (!$zbp->CheckPlugin('yuran_zixun')) {$zbp->ShowError(48);die();}
 
 if (count($_POST) > 0) {
     CheckIsRefererValid();
     if (isset($_POST['yuran'])) {
         foreach ($_POST['yuran'] as $key => $val) {
-            $zbp->Config('yuranapp')->$key = $val;
+            $zbp->Config('yuran_zixun')->$key = $val;
         }
-        $zbp->SaveConfig('yuranapp');
+        $zbp->SaveConfig('yuran_zixun');
         $zbp->SetHint('good', '参数已保存');
     }
 }
@@ -25,7 +25,7 @@ require $blogpath . 'zb_system/admin/admin_top.php';
 <div id="divMain">
     <div class="divHeader"><?php echo $blogtitle;?></div>
     <div class="SubMenu">
-        <?php echo yuranapp_SubMenu(1); ?>
+        <?php echo yuran_zixun_SubMenu(1); ?>
     </div>
     <div id="divMain2">
 
@@ -39,49 +39,49 @@ require $blogpath . 'zb_system/admin/admin_top.php';
                 <tr>
                     <td class="td30"><p align='left'><b>App Key</b></p></td>
                     <td>
-                        <input name="yuran['appkey']" id="appkey" type="text" value="<?php echo $zbp->Config('yuranapp')->appkey; ?>" style="width:90%;height:30px;letter-spacing:1px; " required="required" />
+                        <input name="yuran['appkey']" id="appkey" type="text" value="<?php echo $zbp->Config('yuran_zixun')->appkey; ?>" style="width:90%;height:30px;letter-spacing:1px; " required="required" />
                     </td>
                 </tr>
                 <tr>
                     <td class="td30"><p align='left'><b>App Secret</b></p></td>
                     <td>
-                        <input name="yuran['appsecret']" id="appsecret" type="text" value="<?php echo $zbp->Config('yuranapp')->appsecret; ?>" style="width:90%;height:30px;letter-spacing:1px; " required="required" />
+                        <input name="yuran['appsecret']" id="appsecret" type="text" value="<?php echo $zbp->Config('yuran_zixun')->appsecret; ?>" style="width:90%;height:30px;letter-spacing:1px; " required="required" />
                     </td>
                 </tr>
                 <tr>
                     <td class="td30"><p align='left'><b>小程序名称</b></p></td>
                     <td>
-                        <input name="yuran['name']" id="cloudcache" type="text" value="<?php echo $zbp->Config('yuranapp')->name; ?>" style="width:90%;height:30px;letter-spacing:1px; " required="required" />
+                        <input name="yuran['name']" id="cloudcache" type="text" value="<?php echo $zbp->Config('yuran_zixun')->name; ?>" style="width:90%;height:30px;letter-spacing:1px; " required="required" />
                     </td>
                 </tr>
                 <tr>
                     <td class="td30"><p align='left'><b>小程序标题</b></p></td>
                     <td>
-                        <input name="yuran['title']" id="cloudcache" type="text" value="<?php echo $zbp->Config('yuranapp')->title; ?>" style="width:90%;height:30px;letter-spacing:1px; " required="required" />
+                        <input name="yuran['title']" id="cloudcache" type="text" value="<?php echo $zbp->Config('yuran_zixun')->title; ?>" style="width:90%;height:30px;letter-spacing:1px; " required="required" />
                     </td>
                 </tr>
                 <tr>
                     <td class="td30"><p align='left'><b>小程序关键词</b></p></td>
                     <td>
-                        <input name="yuran['keywords']" id="cloudcache" type="text" value="<?php echo $zbp->Config('yuranapp')->keywords; ?>" style="width:90%;height:30px;letter-spacing:1px; " required="required" />
+                        <input name="yuran['keywords']" id="cloudcache" type="text" value="<?php echo $zbp->Config('yuran_zixun')->keywords; ?>" style="width:90%;height:30px;letter-spacing:1px; " required="required" />
                     </td>
                 </tr>
                 <tr>
                     <td class="td30"><p align='left'><b>小程序描述</b></p></td>
                     <td>
-                        <input name="yuran['description']" id="cloudcache" type="text" value="<?php echo $zbp->Config('yuranapp')->description; ?>" style="width:90%;height:30px;letter-spacing:1px; " required="required" />
+                        <input name="yuran['description']" id="cloudcache" type="text" value="<?php echo $zbp->Config('yuran_zixun')->description; ?>" style="width:90%;height:30px;letter-spacing:1px; " required="required" />
                     </td>
                 </tr>
                 <tr>
                     <td class="td30"><p align='left'><b>免责声明文章id</b></p></td>
                     <td>
-                        <input name="yuran['mzid']" id="cloudcache" type="text" value="<?php echo (int)$zbp->Config('yuranapp')->mzid; ?>" placeholder="填写文章的ID，不填不显示"  style="width:90%;height:30px;letter-spacing:1px; " required="required" />
+                        <input name="yuran['mzid']" id="cloudcache" type="text" value="<?php echo (int)$zbp->Config('yuran_zixun')->mzid; ?>" placeholder="填写文章的ID，不填不显示"  style="width:90%;height:30px;letter-spacing:1px; " required="required" />
                     </td>
                 </tr>
                 <tr>
                     <td class="td30"><p align='left'><b>关于我们文章id</b></p></td>
                     <td>
-                        <input name="yuran['aboutid']" id="cloudcache" type="text" value="<?php echo (int)$zbp->Config('yuranapp')->aboutid; ?>" placeholder="填写文章的ID，不填不显示" style="width:90%;height:30px;letter-spacing:1px; " required="required" />
+                        <input name="yuran['aboutid']" id="cloudcache" type="text" value="<?php echo (int)$zbp->Config('yuran_zixun')->aboutid; ?>" placeholder="填写文章的ID，不填不显示" style="width:90%;height:30px;letter-spacing:1px; " required="required" />
                     </td>
                 </tr>
                 <tr>

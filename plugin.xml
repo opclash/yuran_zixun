@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <plugin version="php">
-<id>yuranapp</id>
+<id>yuran_zixun</id>
 <name>百度智能小程序</name>
 <url>https://opssh.cn/fenxiang/35.html</url>
 <note>接入 swan-sitemap 动态库，一站式互动组件，小程序一键关注，文章语音朗读，小程序云加速缓存，swan.setPageInfo 动态库，云端一体组件</note>

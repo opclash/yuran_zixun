@@ -9,7 +9,7 @@ function api_yuran_info() {
 	), array("baiduapp_swiper_Order" => "DESC"));
 	if (count($swipers) > 0) {
 		foreach ($swipers as $item) {
-			$json['swiper'][] = yuranapp_JSON_SwiperToJson($item);
+			$json['swiper'][] = yuran_zixun_JSON_SwiperToJson($item);
 		}
 	}
 
@@ -19,25 +19,25 @@ function api_yuran_info() {
 	), array("baiduapp_swiper_Order" => "DESC"));
 	if (count($swipers) > 0) {
 		foreach ($swipers as $item) {
-			$json['toolnav'][] = yuranapp_JSON_SwiperToJson($item);
+			$json['toolnav'][] = yuran_zixun_JSON_SwiperToJson($item);
 		}
 	}
 
-	$json['info']['name']=$zbp->Config('yuranapp')->name;
-	$json['info']['title']=$zbp->Config('yuranapp')->title;
-	$json['info']['keywords']=$zbp->Config('yuranapp')->keywords;
-	$json['info']['description']=$zbp->Config('yuranapp')->description;
-	$json['info']['cloudcache']=(int)$zbp->Config('yuranapp')->cloudcache;
-	$json['info']['contacton']=(int)$zbp->Config('yuranapp')->contacton;
-	$json['info']['mzid']=(int)$zbp->Config('yuranapp')->mzid;
-	$json['info']['aboutid']=(int)$zbp->Config('yuranapp')->aboutid;
-	$json['info']['aboutimg']=$zbp->host."zb_users/plugin/yuranapp/images/wave.gif";
+	$json['info']['name']=$zbp->Config('yuran_zixun')->name;
+	$json['info']['title']=$zbp->Config('yuran_zixun')->title;
+	$json['info']['keywords']=$zbp->Config('yuran_zixun')->keywords;
+	$json['info']['description']=$zbp->Config('yuran_zixun')->description;
+	$json['info']['cloudcache']=(int)$zbp->Config('yuran_zixun')->cloudcache;
+	$json['info']['contacton']=(int)$zbp->Config('yuran_zixun')->contacton;
+	$json['info']['mzid']=(int)$zbp->Config('yuran_zixun')->mzid;
+	$json['info']['aboutid']=(int)$zbp->Config('yuran_zixun')->aboutid;
+	$json['info']['aboutimg']=$zbp->host."zb_users/plugin/yuran_zixun/images/wave.gif";
 	return array('data' => $json);
 }
 
 function api_yuran_search() {
 	global $zbp;
-	$red = explode(',', $zbp->Config('yuranapp')->search);
+	$red = explode(',', $zbp->Config('yuran_zixun')->search);
 	$json['red']=$red;
 	return array('data' => $json);
 }

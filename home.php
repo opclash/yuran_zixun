@@ -7,7 +7,7 @@ require '../../../zb_system/function/c_system_admin.php';
 $zbp->Load();
 $action='root';
 if (!$zbp->CheckRights($action)) {$zbp->ShowError(6);die();}
-if (!$zbp->CheckPlugin('yuranapp')) {$zbp->ShowError(48);die();}
+if (!$zbp->CheckPlugin('yuran_zixun')) {$zbp->ShowError(48);die();}
 if (count($_POST) > 0) {
 CheckIsRefererValid();
 }
@@ -55,7 +55,7 @@ $swipers = $baiduapp->GetSwiperList(null, $where, array("baiduapp_swiper_Order" 
 <div id="divMain">
   <div class="divHeader"><?php echo $blogtitle;?></div>
   <div class="SubMenu">
-  <div class="SubMenu"><?php yuranapp_SubMenu(4);?></div>
+  <div class="SubMenu"><?php yuran_zixun_SubMenu(4);?></div>
   </div>
   <div id="divMain2">
         <table border="1" class="tableFull tableBorder tableBorder-thcenter" style="max-width: 1000px">

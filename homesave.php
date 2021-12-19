@@ -4,7 +4,7 @@ require '../../../zb_system/function/c_system_admin.php';
 $zbp->Load();
 $action='root';
 if (!$zbp->CheckRights($action)) {$zbp->ShowError(6);die();}
-if (!$zbp->CheckPlugin('yuranapp')) {$zbp->ShowError(48);die();}
+if (!$zbp->CheckPlugin('yuran_zixun')) {$zbp->ShowError(48);die();}
 
 $type = GetVars("type", "GET");
 switch ($type) {

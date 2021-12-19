@@ -4,7 +4,7 @@ require '../../../zb_system/function/c_system_admin.php';
 $zbp->Load();
 $action='root';
 if (!$zbp->CheckRights($action)) {$zbp->ShowError(6);die();}
-if (!$zbp->CheckPlugin('yuranapp')) {$zbp->ShowError(48);die();}
+if (!$zbp->CheckPlugin('yuran_zixun')) {$zbp->ShowError(48);die();}
 
 if (count($_POST) > 0) {
     CheckIsRefererValid();
@@ -23,7 +23,7 @@ require $blogpath . 'zb_system/admin/admin_top.php';
 <div id="divMain">
     <div class="divHeader"><?php echo $blogtitle;?></div>
     <div class="SubMenu">
-        <?php echo yuranapp_SubMenu(0); ?>
+        <?php echo yuran_zixun_SubMenu(0); ?>
     </div>
     <div id="divMain2">
 
