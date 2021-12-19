@@ -26,7 +26,7 @@ function yuran_zixun_API() {
 function yuran_zixun_Admin_SiteInfo_SubMenu(&$m)
 {
   global $zbp;
-  $m[] = MakeTopMenu("root", '百度小程序设置', $zbp->host . "zb_users/plugin/yuran_zixun/show.php", "", "topmenu_metro",'icon-zblog-appcenter');
+  $m[] = MakeTopMenu("root", '百度小程序', $zbp->host . "zb_users/plugin/yuran_zixun/show.php", "", "topmenu_metro",'icon-zblog-appcenter');
 }
 
 function yuran_zixun_SubMenu($id){
@@ -140,7 +140,7 @@ function yuran_zixun_baiduapp_Post($id,$type){
 function yuran_zixun_Edit_Response3(){
     global $zbp,$article;
     echo '<div id="original" class="editmod">
-    <label for="edtoriginal" class="editinputname">小程序天级收录</label>
+    <label for="edtoriginal" class="editinputname">小程序收录推送</label>
     <input id="edtoriginal" name="meta_search1" style="" type="text" value="0" class="checkbox"/>
     </div>';
     echo '<div id="original" class="editmod">
