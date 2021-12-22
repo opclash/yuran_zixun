@@ -31,7 +31,7 @@ function api_yuran_info() {
 	$json['info']['contacton']=(int)$zbp->Config('yuran_zixun')->contacton;
 	$json['info']['mzid']=(int)$zbp->Config('yuran_zixun')->mzid;
 	$json['info']['aboutid']=(int)$zbp->Config('yuran_zixun')->aboutid;
-	$json['info']['aboutimg']=$zbp->host."zb_users/plugin/yuran_zixun/images/wave.gif";
+	$json['info']['navimg']=$zbp->host."zb_users/plugin/yuran_zixun/images/navimg.png";
 	return array('data' => $json);
 }
 

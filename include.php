@@ -26,16 +26,16 @@ function yuran_zixun_API() {
 function yuran_zixun_Admin_SiteInfo_SubMenu(&$m)
 {
   global $zbp;
-  $m[] = MakeTopMenu("root", '百度小程序', $zbp->host . "zb_users/plugin/yuran_zixun/show.php", "", "topmenu_metro",'icon-zblog-appcenter');
+  $m[] = MakeTopMenu("root", '百度设置', $zbp->host . "zb_users/plugin/yuran_zixun/show.php", "", "topmenu_metro",'icon-zblog-appcenter');
 }
 
 function yuran_zixun_SubMenu($id){
 	$arySubMenu = array(
 		0 => array('插件说明', 'show', 'left', false),
-        1 => array('小程序配置', 'set', 'left', false),
-		2 => array('Swiper设置', 'main', 'left', false),
+        1 => array('程序配置', 'set', 'left', false),
+		2 => array('轮播设置', 'main', 'left', false),
         3 => array('功能配置', 'tool', 'left', false),
-        4 => array('首页导航配置', 'home', 'left', false),
+        4 => array('首页导航', 'home', 'left', false),
         5 => array('链接说明', 'url', 'left', false),
 	);
 	foreach($arySubMenu as $k => $v){

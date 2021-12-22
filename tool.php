@@ -37,13 +37,13 @@ require $blogpath . 'zb_system/admin/admin_top.php';
                     <th>说明</th>
                 </tr>
                 <tr>
-                    <td class="td30"><p align='left'><b>开启云加速</b></p></td>
+                    <td class="td30"><p align='left'><b>开启云缓存加速</b></p></td>
                     <td>
                         <input id="edtoriginal" name="yuran['cloudcache']" type="text" value="<?php echo (int)$zbp->Config('yuran_zixun')->cloudcache; ?>" class="checkbox"/>
                     </td>
                 </tr>
                 <tr>
-                    <td class="td30"><p align='left'><b>开启在线客服</b></p></td>
+                    <td class="td30"><p align='left'><b>开启首页轮播图</b></p></td>
                     <td>
                         <input id="edtoriginal" name="yuran['contacton']" type="text" value="<?php echo (int)$zbp->Config('yuran_zixun')->contacton; ?>" class="checkbox"/>
                     </td>
@@ -61,7 +61,7 @@ require $blogpath . 'zb_system/admin/admin_top.php';
                     </td>
                 </tr>
                 <tr>
-                    <td class="td30"><p align='left'><b>开启列表视频展示</b></p></td>
+                    <td class="td30"><p align='left'><b>开启文章页内视频展示</b></p></td>
                     <td>
                         <input id="edtoriginal" name="yuran['videoon']" type="text" value="<?php echo (int)$zbp->Config('yuran_zixun')->videoon; ?>" class="checkbox"/>
                     </td>

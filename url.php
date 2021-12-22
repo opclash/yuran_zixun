@@ -49,7 +49,7 @@ require $blogpath . 'zb_system/admin/admin_top.php';
                 </tr>
                 <tr>
                     <td class="td30"><p align='left'><b>轮播图修改地址</b></p></td>
-                    <td><a href="https://smartprogram.baidu.com/developer/vscloud/applist.html?pagetype=banner" target="_blank" textvalue="轮播图管理（点击访问）">轮播图管理（点击访问）</a></td>
+                    <td><a href="https://smartprogram.baidu.com/developer/vscloud/applist.html?pagetype=banner" target="_blank" textvalue="轮播图管理（点击访问）">轮播图管理（点击访问）</a>，自定义的无视</td>
                 </tr>
             </table>
 
