@@ -49,6 +49,12 @@ require $blogpath . 'zb_system/admin/admin_top.php';
                     </td>
                 </tr>
                 <tr>
+                    <td class="td30"><p align='left'><b>切换搜索一体化</b></p></td>
+                    <td>
+                        <input id="edtoriginal" name="yuran['searchqh']" type="text" value="<?php echo (int)$zbp->Config('yuran_zixun')->searchqh; ?>" class="checkbox"/>
+                    </td>
+                </tr>
+                <tr>
                     <td class="td30"><p align='left'><b>关闭新文章摘要生成</b></p></td>
                     <td>
                         <input id="edtoriginal" name="yuran['newintro']" type="text" value="<?php echo (int)$zbp->Config('yuran_zixun')->newintro; ?>" class="checkbox"/>

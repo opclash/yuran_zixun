@@ -29,6 +29,7 @@ function api_yuran_info() {
 	$json['info']['description']=$zbp->Config('yuran_zixun')->description;
 	$json['info']['cloudcache']=(int)$zbp->Config('yuran_zixun')->cloudcache;
 	$json['info']['contacton']=(int)$zbp->Config('yuran_zixun')->contacton;
+	$json['info']['searchqh']=(int)$zbp->Config('yuran_zixun')->searchqh;
 	$json['info']['mzid']=(int)$zbp->Config('yuran_zixun')->mzid;
 	$json['info']['aboutid']=(int)$zbp->Config('yuran_zixun')->aboutid;
 	$json['info']['navimg']=$zbp->host."zb_users/plugin/yuran_zixun/images/navimg.png";
