@@ -48,7 +48,7 @@ require $blogpath . 'zb_system/admin/admin_top.php';
                 </tr>
                 <tr>
                     <td class="td30"><p align='left'><b>合作伙伴</b></p></td>
-					<td><a target="_blank" href="https://www.yuran.com/">豫唐网络</a></td>
+					<td><a target="_blank" href="https://www.ytecn.com/">豫唐网络</a></td>
                 </tr>
             </table>
         </form>

@@ -73,13 +73,13 @@ require $blogpath . 'zb_system/admin/admin_top.php';
                     </td>
                 </tr>
                 <tr>
-                    <td class="td30"><p align='left'><b>免责声明文章id</b></p></td>
+                    <td class="td30"><p align='left'><b>首页轮播图ID值</b></p></td>
                     <td>
-                        <input name="yuran['mzid']" id="cloudcache" type="text" value="<?php echo (int)$zbp->Config('yuran_zixun')->mzid; ?>" placeholder="填写文章的ID，不填不显示"  style="width:90%;height:30px;letter-spacing:1px; " required="required" />
+                        <input name="yuran['moduleId']" id="cloudcache" type="text" value="<?php echo (int)$zbp->Config('yuran_zixun')->moduleId; ?>" placeholder="填写轮播图的ID，不填不显示"  style="width:90%;height:30px;letter-spacing:1px; " required="required" />
                     </td>
                 </tr>
                 <tr>
-                    <td class="td30"><p align='left'><b>关于我们文章id</b></p></td>
+                    <td class="td30"><p align='left'><b>关于我们文章ID值</b></p></td>
                     <td>
                         <input name="yuran['aboutid']" id="cloudcache" type="text" value="<?php echo (int)$zbp->Config('yuran_zixun')->aboutid; ?>" placeholder="填写文章的ID，不填不显示" style="width:90%;height:30px;letter-spacing:1px; " required="required" />
                     </td>

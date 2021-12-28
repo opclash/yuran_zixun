@@ -43,15 +43,27 @@ require $blogpath . 'zb_system/admin/admin_top.php';
                     </td>
                 </tr>
                 <tr>
-                    <td class="td30"><p align='left'><b>开启首页轮播图</b></p></td>
+                    <td class="td30"><p align='left'><b>开启默认轮播图</b></p></td>
                     <td>
                         <input id="edtoriginal" name="yuran['contacton']" type="text" value="<?php echo (int)$zbp->Config('yuran_zixun')->contacton; ?>" class="checkbox"/>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="td30"><p align='left'><b>开启百度轮播图</b></p></td>
+                    <td>
+                        <input id="edtoriginal" name="yuran['appbanner']" type="text" value="<?php echo (int)$zbp->Config('yuran_zixun')->appbanner; ?>" class="checkbox"/>
                     </td>
                 </tr>
                 <tr>
                     <td class="td30"><p align='left'><b>切换搜索一体化</b></p></td>
                     <td>
                         <input id="edtoriginal" name="yuran['searchqh']" type="text" value="<?php echo (int)$zbp->Config('yuran_zixun')->searchqh; ?>" class="checkbox"/>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="td30"><p align='left'><b>开启评论一体化</b></p></td>
+                    <td>
+                        <input id="edtoriginal" name="yuran['comlist']" type="text" value="<?php echo (int)$zbp->Config('yuran_zixun')->comlist; ?>" class="checkbox"/>
                     </td>
                 </tr>
                 <tr>
