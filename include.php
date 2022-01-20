@@ -11,6 +11,7 @@ function ActivePlugin_yuran_zixun() {
     Add_Filter_Plugin('Filter_Plugin_PostArticle_Succeed','yuran_zixun_PostArticle_Succeed');
     Add_Filter_Plugin('Filter_Plugin_API_Extend_Mods', 'yuran_zixun_API');
     Add_Filter_Plugin('Filter_Plugin_Admin_TopMenu', 'yuran_zixun_Admin_SiteInfo_SubMenu');
+	Add_Filter_Plugin('Filter_Plugin_API_Post_List_Core', 'yuran_zixun_API_Post_List_Core');
 }
 
 function InstallPlugin_yuran_zixun() {
@@ -172,6 +173,28 @@ function yuran_zixun_PostArticle_Core(&$article) {
     }
 }
 
+function yuran_zixun_API_Post_List_Core($select, &$where){
+    global $zbp;
+    if ($zbp->Config('yuran_zixun')->filter_art) {
+        $list = explode(",", $zbp->Config('yuran_zixun')->filter_art);
+        foreach ($list as $id) {
+            $where[] = array("<>", "log_ID", $id);
+        }
+    }
+
+    if ($zbp->Config('yuran_zixun')->filter) {
+        $list = explode(",", $zbp->Config('yuran_zixun')->filter);
+        foreach ($list as $id) {
+            $where[] = array("<>", "log_CateID", $id);
+            $childs = yuran_zixun_Event_GetCategoryChilds($id);
+            foreach ($childs as $item) {
+                $where[] = array("<>", "log_CateID", $item->ID);
+            }
+        }
+    }
+
+}
+
 function yuran_zixun_API_Get_Object_Array(&$object, &$array) {
     global $zbp,$mod,$act;
     switch (get_class($object)) {
@@ -238,4 +261,24 @@ function yuran_zixun_JSON_SwiperToJson($item)
         break;
     }
     return $data;
+}
+
+function yuran_zixun_Event_GetCategoryChilds($id)
+{
+    global $zbp;
+    $result = $zbp->GetCategoryList(
+        array('*'),
+        array(
+            array('=', 'cate_ParentID', $id)
+        )
+    );
+
+    $childList = array();
+    foreach ($result as $item) {
+        $childs = yuran_zixun_Event_GetCategoryChilds($item->ID);
+        $childList = array_merge($childList, $childs);
+    }
+    $result = array_merge($result, $childList);
+
+    return $result;
 }
