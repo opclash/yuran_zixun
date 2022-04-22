@@ -54,7 +54,7 @@ function yuran_zixun_PostArticle_Succeed($article){
         yuran_zixun_baiduapp_Post($article->ID,0);
     }
     if((int) $article->Metas->search2==1){
-        yuran_zixun_baiduapp_Post($article->ID,2);
+        yuran_zixun_baiduapp_spost($article->ID,$article->Title,$article->Intro);
     }
 }
 
@@ -71,7 +71,7 @@ function yuran_zixun_baiduapp_spost($id,$title,$intro){
     $ajax->send();
     $response = json_decode($ajax->responseText, true);
     if (empty($response['access_token'])){
-        $zbp->SetHint('good','推送搜索失败');
+        $zbp->SetHint('good','推送小程序搜索组件失败');
     }else{
         $access_token=$response['access_token'];
         
@@ -93,10 +93,9 @@ function yuran_zixun_baiduapp_spost($id,$title,$intro){
         curl_setopt($curl, CURLOPT_HTTPHEADER, $header);
         curl_setopt($curl, CURLOPT_POSTFIELDS, $post);
         $result = curl_exec($curl);
-        $zbp->SetHint('good','推送成功');
+        $zbp->SetHint('good','推送小程序搜索组件成功');
     }
 }
-
 
 function yuran_zixun_baiduapp_Post($id,$type){
     global $zbp;
@@ -141,11 +140,15 @@ function yuran_zixun_baiduapp_Post($id,$type){
 function yuran_zixun_Edit_Response3(){
     global $zbp,$article;
     echo '<div id="original" class="editmod">
-    <label for="edtoriginal" class="editinputname">小程序收录推送</label>
+    <label for="edtoriginal" class="editinputname">小程序天级收录推送</label>
     <input id="edtoriginal" name="meta_search1" style="" type="text" value="0" class="checkbox"/>
     </div>';
+	echo '<div id="original" class="editmod">
+	<label for="edtoriginal" class="editinputname">小程序小时收录推送</label>
+	<input id="edtoriginal" name="meta_search0" style="" type="text" value="0" class="checkbox"/>
+	</div>';
     echo '<div id="original" class="editmod">
-    <label for="edtoriginal" class="editinputname">小程序搜索提交</label>
+    <label for="edtoriginal" class="editinputname">小程序搜索组件提交</label>
     <input id="edtoriginal" name="meta_search2" style="" type="text" value="0" class="checkbox"/>
     </div>';
     $videoon=(int)$zbp->Config('yuran_zixun')->videoon;
@@ -201,13 +204,13 @@ function yuran_zixun_API_Get_Object_Array(&$object, &$array) {
         case 'Post':
             $array['CateName'] = $zbp->GetCategoryByID($object->CateID)->Name;
             $array['Thumb'] = GetImagesFromHtml($object->Content);
-            $array['Thumb'] = Thumb::Thumbs($array['Thumb'], 350, 240,3);
+            $array['Thumb'] = Thumb::Thumbs($array['Thumb'], 350, 240,1);
             $array['Tagn'] = explode(',', $object->TagsName);
             $on=(int)$zbp->Config('yuran_zixun')->oldintro;
-            $array['TagsNames']=$object->TagsName;
-            if($object->TagsCount==0){
-                $array['TagsNames']=$array['CateName'];
-            }
+//            $array['TagsNames']=$object->TagsName;
+//            if($object->TagsCount==0){
+//                $array['TagsNames']=$array['CateName'];
+//            }
             if($on==1){
                 $intro=preg_replace('/[\r\n\s]+/', '', trim((TransferHTML($object->Content,'[nohtml]'))));
                 $intro=str_replace("&nbsp;","",$intro);
