@@ -144,7 +144,7 @@ function yuran_zixun_Edit_Response3(){
     <input id="edtoriginal" name="meta_search1" style="" type="text" value="0" class="checkbox"/>
     </div>';
 	echo '<div id="original" class="editmod">
-	<label for="edtoriginal" class="editinputname">小程序小时收录推送</label>
+	<label for="edtoriginal" class="editinputname">小程序周级收录推送</label>
 	<input id="edtoriginal" name="meta_search0" style="" type="text" value="0" class="checkbox"/>
 	</div>';
     echo '<div id="original" class="editmod">
@@ -220,6 +220,7 @@ function yuran_zixun_API_Get_Object_Array(&$object, &$array) {
             }
             $array['videoon'] = (int)$object->Metas->videoon;
 			$array['datuad'] = (int)$object->Metas->datuad;
+			
             if($act != "list"){
                 $array['AuthorName'] = $zbp->GetMemberByID($object->AuthorID)->StaticName;
                 $array['AuthorAvatar'] = $zbp->GetMemberByID($object->AuthorID)->Avatar;
@@ -234,6 +235,7 @@ function yuran_zixun_API_Get_Object_Array(&$object, &$array) {
             }
             break;
         default:
+			
             # code...
             break;
     }
