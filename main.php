@@ -77,7 +77,6 @@ $swipers = $baiduapp->GetSwiperList(null, $where, array("baiduapp_swiper_Order" 
                             <select name="Type">
                                 <option value="normal">不关联</option>
                                 <option value="article">文章</option>
-                                <option value="page">单页</option>
                                 <option value="category">分类</option>
                             </select>
                         </td>
@@ -99,7 +98,6 @@ $swipers = $baiduapp->GetSwiperList(null, $where, array("baiduapp_swiper_Order" 
                             <select id="swiper-select-<?php echo $item->ID ?>" name="Type" data-value="<?php echo $item->Type ?>">
                                 <option value="normal">不关联</option>
                                 <option value="article">文章</option>
-                                <option value="page">单页</option>
                                 <option value="category">分类</option>
                             </select>
                             <script>

@@ -252,17 +252,11 @@ function yuran_zixun_JSON_SwiperToJson($item)
         case 'article':
             $data->route = "/pages/article/index?id=".$item->Related;
         break;
-        case 'page':
-            $data->route = "/pages/page/index?id=".$item->Related;
-        break;
         case 'category':
             $data->route = "/pages/list/index?id=".$item->Related;
         break;
         case 'about':
             $data->route = "/pages/about/index";
-        break;
-        case 'yewu':
-            $data->route = "/pages/yewu/index";
         break;
     }
     return $data;

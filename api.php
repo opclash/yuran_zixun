@@ -29,8 +29,8 @@ function baiduapp_JSON_SwiperToJson($item)
         case 'article':
             $data->route = "/pages/article/index?id=".$item->Related;
         break;
-        case 'page':
-            $data->route = "/pages/page/index?id=".$item->Related;
+        case 'category':
+            $data->route = "/pages/list/index?id=".$item->Related;
         break;
         case 'search':
             $data->route = "/pages/search/index?word=".$item->Related;

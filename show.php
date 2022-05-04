@@ -40,7 +40,7 @@ require $blogpath . 'zb_system/admin/admin_top.php';
                 </tr>
                 <tr>
                     <td class="td30"><p align='left'><b>特别说明</b></p></td>
-                    <td>上传小程序代码前，请先配置根目录的app.json文件</td>
+                    <td>上传小程序代码前，请先配置根目录的 app.json 文件</td>
                 </tr>
                 <tr>
                     <td class="td30"><p align='left'><b>技术支持</b></p></td>
