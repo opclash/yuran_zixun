@@ -8,7 +8,7 @@
 <img src="https://img.shields.io/badge/>_彧繎'%20Blog-https://%20opssh.cn%20%E2%86%92-gray.svg?colorA=61c265&amp;colorB=4CAF50&amp;style=for-the-badge">
 </a>
 </p>
-
+<p align="center">本插件为开源版本，可以二次开发，不提供任何技术支持和安装咨询</p>
 <h2>功能介绍</h2>
 <li>大图展示样式切换</li>
 <li>视频展示样式切换</li>
