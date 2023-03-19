@@ -1,11 +1,11 @@
 <h2>yuran_zixun</h2>
 <p align="center">懒得说明，反正就是 zblog-baiduboxapp 百度小程序的插件</p>
 <p align="center">
-<a href="https://opssh.cn/fenxiang/35.html" target="_blank">
+<a href="https://opclash.com/fenxiang/35.html" target="_blank">
 <img src="https://img.shields.io/badge/yuran%20zixun-By%20彧%20繎%20叔%20叔%20-gray.svg?colorA=655BE1&amp;colorB=4F44D6&amp;style=for-the-badge">
 </a>
-<a href="https://opssh.cn/" target="_blank">
-<img src="https://img.shields.io/badge/>_彧繎'%20Blog-https://%20opssh.cn%20%E2%86%92-gray.svg?colorA=61c265&amp;colorB=4CAF50&amp;style=for-the-badge">
+<a href="https://opclash.com/" target="_blank">
+<img src="https://img.shields.io/badge/>_彧繎'%20Blog-https://%20opclash.com%20%E2%86%92-gray.svg?colorA=61c265&amp;colorB=4CAF50&amp;style=for-the-badge">
 </a>
 </p>
 <p align="center">本插件为开源版本，可以二次开发，不提供任何技术支持和安装咨询</p>
